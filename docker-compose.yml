@@ -1,0 +1,22 @@
+version: '3'
+services:
+  nodejs_app:
+    # Название сервиса для вашего приложения Node.js
+    build:
+      context: .
+      dockerfile: Dockerfile.node
+    # Пробрасываем порт 3000, на котором запущено ваше приложение Node.js
+    ports:
+      - "2021:2021"
+  nginx:
+    # Используем официальный образ Nginx
+    image: nginx:latest
+    # Пробрасываем порт 80, чтобы можно было обратиться к Nginx с внешнего мира
+    ports:
+      - "80:80"
+    # Монтируем конфигурацию Nginx в контейнер
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+    # Связываем контейнеры, чтобы Nginx мог обращаться к контейнеру с Node.js по его имени сервиса в этом файле
+    depends_on:
+      - nodejs_app

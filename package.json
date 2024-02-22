@@ -1,15 +1,24 @@
 {
   "name": "node.js-server",
   "version": "1.0.0",
-  "description": "",
+  "description": "This is a tutorial that shows how to create a simple NodeJS Server.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.1"
-  }
+    "express": "^4.18.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tvoilex/node-js.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tvoilex/node-js/issues"
+  },
+  "homepage": "https://github.com/tvoilex/node-js#readme"
 }
