@@ -7,10 +7,8 @@ on:
 jobs:
   build:
     runs-on: self-hosted
-
+    env:
+      PASSWORD: ${{ secrets.CI_REGISTRY_PASSWORD }}
     steps:
-    - name: Install Dependencies
-      run: echo "hi"
-
-    - name: Run Tests
-      run: pwd
+    - name: Login to Docker Hub
+      run: echo $PASSWORD | docker login -u "tvoilex" --password-stdin docker.io
