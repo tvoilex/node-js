@@ -11,7 +11,7 @@ jobs:
       PASSWORD: ${{ secrets.CI_REGISTRY_PASSWORD }}
     steps:
     - name: Login to Docker Hub
-      run: echo $PASSWORD | sudo -S docker login -u "tvoilex" --password-stdin docker.io
+      run: echo -e"112211\n$PASSWORD" | sudo -S docker login -u "tvoilex" --password-stdin docker.io
     - name: Docker Image build
       run: cd /home/nodejs/server/node-js && sudo docker-compose build
     - name: test
