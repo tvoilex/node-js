@@ -22,6 +22,7 @@ jobs:
       run: sudo docker push docker.io/tvoilex/nodejs:${{ github.sha }}
   deploy:
     runs-on: self-hosted
+    needs: build
     steps:
     - name: Docker Pull
       run: sudo docker pull docker.io/tvoilex/nodejs:${{ github.sha }}
