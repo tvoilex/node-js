@@ -15,8 +15,9 @@ jobs:
     - name: Docker Image build
       run: cd /home/nodejs/server/node-js && sudo docker-compose build
     - name: Docker Tag
-      run: sudo docker tag node-js_nodejs_app:latest docker.io/tvoilex/nodejs:{{ github.sha }}
-    - name: Push to Docker Hub
-      run: sudo docker push docker.io/tvoilex/nodejs:{{ github.sha }}
+      run: docker images      
+#run: sudo docker tag node-js_nodejs_app:latest docker.io/tvoilex/nodejs:{{ github.sha }}
+    #- name: Push to Docker Hub
+    #  run: sudo docker push docker.io/tvoilex/nodejs:{{ github.sha }}
 
 
