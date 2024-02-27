@@ -3,7 +3,7 @@ const port = 2021;
 
 const app = express();
 app.get('/', (req, res) => {
-    res.send('MAX Simple Node.js Server is Up and Running.......')
+    res.send('Kirill Simple Node.js Server is Up and Running.......')
 })
 app.listen(port, ()=>{
     console.log(`Server is listening on port ${port}`)
