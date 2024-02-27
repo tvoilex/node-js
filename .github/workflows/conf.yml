@@ -13,7 +13,7 @@ jobs:
     - name: Login to Docker Hub
       run: echo $PASSWORD | sudo docker login -u "tvoilex" --password-stdin docker.io
     - name: Docker Image build
-      run: docker-compose build
+      run: cd /home/nodejs/server/node-js && docker-compose build
     - name: Docker Tag
       run: docker tag node-js_nodejs_app docker.io/tvoilex/nodejs:{{ github.sha }}
     - name: Push to Docker Hub
