@@ -15,8 +15,8 @@ jobs:
     - name: Docker Image build
       run: docker-compose build
     - name: Docker Tag
-    - run: docker tag node-js_nodejs_app docker.io/tvoilex/nodejs:{{ github.sha }}
+      run: docker tag node-js_nodejs_app docker.io/tvoilex/nodejs:{{ github.sha }}
     - name: Push to Docker Hub
-    - run: docker push docker.io/tvoilex/nodejs:{{ github.sha }}
+      run: docker push docker.io/tvoilex/nodejs:{{ github.sha }}
 
 
